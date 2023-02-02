@@ -50,20 +50,8 @@ const EditContact = () => {
     event.preventDefault();
     try {
       setLoading(true);
-      // Copy State
-      // Update State
-      // Send Request
-      // status == 200 -> do nothing
-      // status == error -> setState(copyState)
       const { data, status } = await updateContact(contact, contactId);
 
-      /*
-       * NOTE
-       * 1- forceRender -> setForceRender(true)
-       * 2- Send request server
-       * 3- Update local state
-       * 4- Update local state before sending request to server
-       */
 
       if (status === 200) {
         setLoading(false);

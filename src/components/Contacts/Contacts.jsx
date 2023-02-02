@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { ContactContext } from "../../context/contactContext";
@@ -9,6 +9,7 @@ import { CURRENTLINE, ORANGE, PINK } from "../../helpers/colors";
 const Contacts = () => {
   const { filteredContacts, loading, deleteContact } =
     useContext(ContactContext);
+
 
   return (
     <>

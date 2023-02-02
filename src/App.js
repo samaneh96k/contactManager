@@ -44,10 +44,31 @@ const App = () => {
 
         const { data: contactsData } = await getAllContacts();
         const { data: groupsData } = await getAllGroups();
-
-        setContacts(contactsData);
-        setFilteredContacts(contactsData);
-        setGroups(groupsData);
+        const loadedcontactsData = [];
+        const loadedgroupsData = [];
+        for (const key in contactsData) {
+          loadedcontactsData.push({
+            id: key,
+            fullname: contactsData[key].fullname,
+            mobile:contactsData[key].mobile,
+            email:contactsData[key].email,
+            job:contactsData[key].job,
+            photo:contactsData[key].photo,
+            group:contactsData[key].group,
+           
+          });
+        }
+        for (const key in groupsData) {
+          loadedgroupsData.push({
+            id: key,
+            name: groupsData[key].name,
+           
+          });
+        }
+console.log(loadedcontactsData)
+        setContacts(loadedcontactsData);
+        setFilteredContacts(loadedcontactsData);
+        setGroups(loadedgroupsData);
 
         setLoading(false);
       } catch (err) {
@@ -59,17 +80,14 @@ const App = () => {
     fetchData();
   }, []);
 
+
+
   const createContactForm = async (event) => {
     event.preventDefault();
     try {
       setLoading((prevLoading) => !prevLoading);
       const { status, data } = await createContact(contact);
 
-      /*
-       * NOTE
-       * 1- Rerender -> forceRender, setForceRender
-       * 2- setContact(data)
-       */
 
       if (status === 201) {
         const allContacts = [...contacts, data];
@@ -135,13 +153,7 @@ const App = () => {
   };
 
   const removeContact = async (contactId) => {
-    /*
-     * NOTE
-     * 1- forceRender -> setForceRender
-     * 2- Server Request
-     * 3- Delete Local State
-     * 4- Delete State Before Server Request
-     */
+ 
 
     // Contacts Copy
     const allContacts = [...contacts];

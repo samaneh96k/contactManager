@@ -8,8 +8,8 @@ import { Spinner } from "../";
 import { CURRENTLINE, CYAN, PURPLE } from "../../helpers/colors";
 
 const ViewContact = () => {
-  const { contactId } = useParams();
-
+  const{ contactId}  = useParams();
+console.log(contactId);
   const [state, setState] = useState({
     contact: {},
     group: {},
@@ -23,6 +23,9 @@ const ViewContact = () => {
 
         const { data: contactData } = await getContact(contactId);
         const { data: groupData } = await getGroup(contactData.group);
+        console.log(contactData)
+      
+
 
         setLoading(false);
         setState({
