@@ -25,11 +25,11 @@ const ViewContact = () => {
         const { data: groupData } = await getGroup(contactData.group);
        
         setLoading(false);
-        setState({
-         ...state,
-          contact: contactData,
-          group: groupData,
-        });
+        setState((state)=>({
+          ...state,
+           contact: contactData,
+           group: groupData,
+         }));
       } catch (err) {
         console.log(err.message);
         setLoading(false);
@@ -39,7 +39,7 @@ const ViewContact = () => {
    
 
     fetchData();
-  },[contactId,state,setLoading]);
+  },[contactId,setLoading]);
 
   const { contact, group } = state;
 
