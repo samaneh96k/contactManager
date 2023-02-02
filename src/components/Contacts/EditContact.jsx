@@ -37,7 +37,7 @@ const EditContact = () => {
     };
 
     fetchData();
-  }, );
+  },[contactId,setLoading]);
 
   const onContactChange = (event) => {
     setContact({

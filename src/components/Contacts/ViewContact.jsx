@@ -17,12 +17,10 @@ const ViewContact = () => {
   const { loading, setLoading } = useContext(ContactContext);
 
   useEffect(() => {
-
-
     const fetchData = async () => {
       try {
         setLoading(true);
-
+  
         const { data: contactData } = await getContact(contactId);
         const { data: groupData } = await getGroup(contactData.group);
        
@@ -36,10 +34,12 @@ const ViewContact = () => {
         console.log(err.message);
         setLoading(false);
       }
-    };
+    }
+
+   
 
     fetchData();
-  });
+  },[contactId,state,setLoading]);
 
   const { contact, group } = state;
 
