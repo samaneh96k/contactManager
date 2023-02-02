@@ -26,6 +26,7 @@ const AddContact = () => {
                 left: "100px",
                 opacity: "50%",
               }}
+                alt=""
             />
             <div className="container">
               <div className="row">

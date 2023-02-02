@@ -7,8 +7,8 @@ const Contact = ({ contact, deleteContact }) => {
     <div className="col-md-6">
       <div style={{ backgroundColor: CURRENTLINE }} className="card my-2">
         <div className="card-body">
-          <div className="row align-items-center d-flex justify-content-around">
-            <div className="col-md-4 col-sm-4">
+          <div className="row align-items-center d-flex justify-content-center">
+            <div className="col-md-3 col-sm-4 mb-2">
               <img
                 src={contact.photo}
                 alt={contact.fullname}
@@ -16,8 +16,8 @@ const Contact = ({ contact, deleteContact }) => {
                 className="img-fluid rounded"
               />
             </div>
-            <div className="col-md-7 col-sm-7">
-              <ul className="list-group">
+            <div className="col-md-8 col-sm-7 ">
+              <ul className="rounded-1">
                 <li className="list-group-item list-group-item-dark">
                   نام و نام خانوداگی :{"  "}
                   <span className="fw-bold">{contact.fullname}</span>
@@ -34,10 +34,10 @@ const Contact = ({ contact, deleteContact }) => {
                 </li>
               </ul>
             </div>
-            <div className="col-md-1 col-sm-1 d-flex flex-column align-items-center">
+            <div className="col-md-1 col-sm-1 d-flex flex-md-column flex-sm-row-cols-1 justify-content-center align-items-center ">
               <Link
                 to={`/contacts/${contact.id}`}
-                className="btn my-1"
+                className="btn m-1 "
                 style={{ backgroundColor: ORANGE }}
               >
                 <i className="fa fa-eye" />
@@ -45,14 +45,14 @@ const Contact = ({ contact, deleteContact }) => {
 
               <Link
                 to={`/contacts/edit/${contact.id}`}
-                className="btn my-1"
+                className="btn m-1"
                 style={{ backgroundColor: CYAN }}
               >
                 <i className="fa fa-pen" />
               </Link>
               <button
                 onClick={deleteContact}
-                className="btn my-1"
+                className="btn m-1"
                 style={{ backgroundColor: RED }}
               >
                 <i className="fa fa-trash" />

@@ -37,7 +37,7 @@ const EditContact = () => {
     };
 
     fetchData();
-  }, []);
+  }, );
 
   const onContactChange = (event) => {
     setContact({
@@ -188,14 +188,16 @@ const EditContact = () => {
                   <img
                     src={contact.photo}
                     className="img-fluid rounded"
-                    style={{ border: `1px solid ${PURPLE}` }}
+                      style={{ border: `1px solid ${PURPLE}` }}
+                      alt=""
                   />
                 </div>
               </div>
             </div>
 
             <div className="text-center mt-1">
-              <img
+                <img
+                  alt=""
                 src={require("../../assets/man-taking-note.png")}
                 height="300px"
                 style={{ opacity: "60%" }}

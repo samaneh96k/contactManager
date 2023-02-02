@@ -9,7 +9,7 @@ import { CURRENTLINE, CYAN, PURPLE } from "../../helpers/colors";
 
 const ViewContact = () => {
   const{ contactId}  = useParams();
-console.log(contactId);
+
   const [state, setState] = useState({
     contact: {},
     group: {},
@@ -29,7 +29,7 @@ console.log(contactId);
 
         setLoading(false);
         setState({
-          ...state,
+         
           contact: contactData,
           group: groupData,
         });

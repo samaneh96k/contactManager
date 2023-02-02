@@ -14,7 +14,7 @@ const Navbar = () => {
     >
       <div className="container">
         <div className="row w-100">
-          <div className="col">
+          <div className=" col-lg-6 col-md-12 col-sm-12">
             <div className="navbar-brand">
               <i className="fas fa-id-badge" style={{ color: PURPLE }} /> وب
               اپلیکیشن مدیریت{"  "}
@@ -22,7 +22,7 @@ const Navbar = () => {
             </div>
           </div>
           {location.pathname === "/contacts" ? (
-            <div className="col">
+            <div className=" col-lg-6 col-md-12 col-sm-12">
               <SearchContact />
             </div>
           ) : null}
